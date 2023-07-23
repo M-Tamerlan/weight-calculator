@@ -1,3 +1,5 @@
+
+
 "use strict";
 function calculateCalories(event) {
   event.preventDefault();
@@ -33,6 +35,22 @@ function calculateCalories(event) {
       break;
   }
 
+  var weightLossPerWeek = (calories - 500) / 7700; // Предполагаем, что в 1 кг жира содержится 7700 калорий
+  var weightLossPerMonth = weightLossPerWeek * 4.35; // Приближенное количество недель в месяце
+
   document.getElementById("result").innerHTML =
     "Ваша суточная норма калорий:<br> " + calories.toFixed(2);
+  document.getElementById(
+    "result1"
+  ).innerHTML = `Для похудения в безопасном режиме уменьшите норму потребления до ${(
+    calories - 500
+  ).toFixed(2)} ккал. Через неделю вы похудеете на ${weightLossPerWeek.toFixed(
+    2
+  )} кг, а через месяц на ${weightLossPerMonth.toFixed(2)} кг.`;
+
+  // // Дополнительные выводы результатов (по желанию)
+  // document.getElementById("result2").innerHTML =
+  //   "Другой вариант вывода результатов, если нужно";
+  // document.getElementById("result3").innerHTML =
+  //   "Еще один вариант вывода результатов, если нужно";
 }
