@@ -3,59 +3,164 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="stylesheet" href="index.css" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1 id="header-logo">Calorie Calculator</h1>
-    </div>
+    <section>
+      <form class="main-form" onsubmit="calculateCalories(event)">
+        <div class="gender">
+          <p>Select your gender</p>
+          <div class="genderContainer">
+            <div>
+              <input
+                type="radio"
+                value="man"
+                name="genderButton"
+                class="real-radio"
+                id="maleRadio"
+              />
+              <label for="maleRadio">
+                <span class="custom-radio">Man</span>
+              </label>
+            </div>
+            <div class="gender">
+              <input
+                type="radio"
+                value="woman"
+                name="genderButton"
+                id="femaleRadio"
+              />
+              <label for="femaleRadio">
+                <span class="custom-radio">Woman</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="bodyParameters">
+          <p>Your body parameters</p>
+          <div class="bodyTitel">
+            <!-- <form for="age" class="bodyContainer"> -->
+            <input
+              type="number"
+              required
+              placeholder="Age"
+              name="age"
+              id="age"
+            />
+            <!-- </form> -->
 
-    <form onsubmit="calculateCalories(event)">
-      <div>
-        <label for="gender">Пол:</label>
-        <select id="gender" name="gender">
-          <option value="male">Мужской</option>
-          <option value="female">Женский</option>
-        </select>
+            <!-- <form for="weight" class="bodyContainer"> -->
+            <input
+              type="number"
+              required
+              placeholder="Weight"
+              name="weight"
+              id="weight"
+            />
+            <!-- </form> -->
+            <!-- <form for="height" class="bodyContainer"> -->
+            <input
+              type="number"
+              required
+              placeholder="Height"
+              name="height"
+              id="height"
+            />
+            <!-- </form> -->
+          </div>
+        </div>
+        <div class="activeContainer">
+          <p>How active are you</p>
+          <div class="activeTitel">
+            <div>
+              <input
+                type="radio"
+                value="sedentary"
+                name="activeButton"
+                class="real-radio"
+                id="notActiveRadio"
+              />
+              <label for="notActiveRadio">
+                <span class="activeCustom-radio">Not Active</span>
+              </label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                value="lightly-active"
+                name="activeButton"
+                class="real-radio"
+                id="lowRadio"
+              />
+              <label for="lowRadio">
+                <span class="activeCustom-radio">Low</span>
+              </label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                value="moderately-active"
+                name="activeButton"
+                class="real-radio"
+                id="middleRadio"
+              />
+              <label for="middleRadio">
+                <span class="activeCustom-radio">Middle</span>
+              </label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                value="very-active"
+                name="activeButton"
+                class="real-radio"
+                id="highRadio"
+              />
+              <label for="highRadio">
+                <span class="activeCustom-radio">High</span>
+              </label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                value="super-active"
+                name="activeButton"
+                class="real-radio"
+                id="veryHighRadio"
+              />
+              <label for="veryHighRadio">
+                <span class="activeCustom-radio">Very High</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="result-btn-container">
+          <button
+            class="btn btn-success"
+            onclick="openModal(), calculateCalories()"
+          >
+            <p>calculate</p>
+          </button>
+        </div>
+      </form>
+      <!--  -->
+
+      <div class="modal">
+        <div class="modal-content">
+          <h1 class="done">DONE</h1>
+          <p id="result"></p>
+          <p id="result1"></p>
+          <span onclick="closeModal();">&times</span>
+        </div>
       </div>
 
-      <div>
-        <label for="weight">Вес (кг):</label>
-        <input type="number" id="weight" name="weight" required />
-      </div>
-
-      <div>
-        <label for="height">Рост (см):</label>
-        <input type="number" id="height" name="height" required />
-      </div>
-
-      <div>
-        <label for="age">Возраст:</label>
-        <input type="number" id="age" name="age" required />
-      </div>
-      <div class="container">
-        <label for="activity-level">Уровень активности:</label>
-        <select id="activity-level">
-          <option value="sedentary">Сидячий образ жизни</option>
-          <option value="lightly-active">
-            Легкая активность (тренировки 1-3 раза в неделю)
-          </option>
-          <option value="moderately-active">
-            Умеренная активность (тренировки 3-5 раз в неделю)
-          </option>
-          <option value="very-active">
-            Высокая активность (тренировки 6-7 раз в неделю)
-          </option>
-          <option value="super-active">
-            Очень высокая активность (тренировки каждый день)
-          </option>
-        </select>
-      </div>
-
-      <button onclick="calculateCalories()">Рассчитать</button>
-      <div id="resultContainer"><p id="result">Ответ</p></div>
-    </form>
-    <script src="index.js"></script>
+      <!--  -->
+    </section>
+    <script src="/index.js"></script>
   </body>
 </html>

@@ -1,13 +1,28 @@
-
-
+// "use strict";
+// function calculateCalories(event) {
+//   event.preventDefault();
+//   var weight = parseFloat(document.getElementById("weight").value);
+//   var height = parseInt(document.getElementById("height").value);
+//   var age = parseInt(document.getElementById("age").value);
+//   var gender = document.querySelector(
+//     'input[name="genderButton"]:checked'
+//   ).value;
+//   var activityLevel = document.querySelector(
+//     'input[name="activeButton"]:checked'
+//   ).value;
 "use strict";
 function calculateCalories(event) {
   event.preventDefault();
-  var weight = parseFloat(document.getElementById("weight").value);
-  var height = parseInt(document.getElementById("height").value);
-  var age = parseInt(document.getElementById("age").value);
-  var gender = document.getElementById("gender").value;
-  var activityLevel = document.getElementById("activity-level").value;
+
+  var weight = parseFloat(document.getElementsByName("weight")[0].value);
+  var height = parseInt(document.getElementsByName("height")[0].value);
+  var age = parseInt(document.getElementsByName("age")[0].value);
+  var gender = document.querySelector(
+    'input[name="genderButton"]:checked'
+  ).value;
+  var activityLevel = document.querySelector(
+    'input[name="activeButton"]:checked'
+  ).value;
 
   var bmr;
   if (gender === "male") {
@@ -54,3 +69,12 @@ function calculateCalories(event) {
   // document.getElementById("result3").innerHTML =
   //   "Еще один вариант вывода результатов, если нужно";
 }
+
+const modal = document.getElementsByClassName("modal")[0];
+const openModal = () => {
+  modal.style.display = "block";
+  // modal.style.zIndex = "999";
+};
+const closeModal = () => {
+  modal.style.display = "none";
+};
