@@ -3,9 +3,9 @@
 
 html{font-family: 'Playpen Sans', cursive; }
 section{
-
+/* height: 100%; */
     
-
+/* overflow-y: hidden; */
  display: flex;
  justify-content: center;
  flex-direction: column;
@@ -14,6 +14,14 @@ gap: 20px;
 
 
 }
+.infoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+}
+
 .custom-radio{
     display: inline-block;
     width: 200px;
@@ -199,6 +207,21 @@ gap: 20px;
   span {
     cursor: pointer;
   }
+  .Done-Img{
+    width: 35px;
+    height: 35px;
+  }
+  .done{
+    position: relative;
+    bottom: 32px;
+    left: 7px;
+  }
+  .iconContainer{
+    display: flex;
+    flex-direction: row;
+   align-items: flex-start;
+   justify-content:flex-start ;
+  }
 
 
 
@@ -217,7 +240,10 @@ gap: 20px;
 
 /*  */
 @media only screen and (max-width: 600px)  {
-    
+    .infoContainer p, h1{
+        margin-left: 20%;
+        margin-right: 20%;
+    }
     .activeTitel{
         flex-direction: column;
         gap: 0.5px;

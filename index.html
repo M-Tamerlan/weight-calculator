@@ -8,11 +8,41 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Weight Calc</title>
   </head>
   <body>
     <section>
-      <form class="main-form" onsubmit="calculateCalories(event)">
+      <div class="infoContainer">
+        <h1>Welcome to the Calorie Calculator!</h1>
+        <p>
+          High-quality nutrition is the foundation of good health and
+          well-being. But how can you determine how many calories you need to
+          achieve your goals?
+        </p>
+        <p>
+          Our Calorie Calculator will help you calculate your daily calorie
+          needs and even provide recommendations on how many calories you should
+          consume to reach your desired weight. Whether you want to maintain
+          your current weight, lose weight, or gain weight, our tool can be your
+          reliable assistant in achieving your goals.
+        </p>
+        <p>
+          Simply fill in a few parameters, and you'll receive personalized
+          calorie consumption recommendations. Our calculator will also
+          calculate how many calories you should reduce for safe weight loss.
+          Eating healthily and maintaining a balanced diet will become easier
+          with our tool.
+        </p>
+        <p>
+          Start right now to take the first step in taking care of your health
+          and well-being. Proper nutrition is essential, and we're here to help
+          you in this process.
+        </p>
+      </div>
+      <form
+        class="main-form"
+        onsubmit="calculateCalories(event); bodyMassIndex(event)"
+      >
         <div class="gender">
           <p>Select your gender</p>
           <div class="genderContainer">
@@ -139,10 +169,28 @@
             </div>
           </div>
         </div>
+
+        <div class="modal">
+          <div class="modal-content">
+            <div class="iconContainer">
+              <img
+                src="img\done_10190628.png"
+                alt="Done-Img"
+                class="Done-Img"
+              />
+              <h1 class="done">DONE</h1>
+            </div>
+            <p id="resultBMI"></p>
+            <p id="result"></p>
+            <p id="result1"></p>
+            <span onclick="closeModal();">&times</span>
+          </div>
+        </div>
+
         <div class="result-btn-container">
           <button
             class="btn btn-success"
-            onclick="openModal(), calculateCalories()"
+            onclick="openModal();bodyMassIndex(); calculateCalories()"
           >
             <p>calculate</p>
           </button>
@@ -150,17 +198,8 @@
       </form>
       <!--  -->
 
-      <div class="modal">
-        <div class="modal-content">
-          <h1 class="done">DONE</h1>
-          <p id="result"></p>
-          <p id="result1"></p>
-          <span onclick="closeModal();">&times</span>
-        </div>
-      </div>
-
       <!--  -->
     </section>
-    <script src="index.js"></script>
+    <script src="/index.js"></script>
   </body>
 </html>

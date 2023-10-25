@@ -54,14 +54,14 @@ function calculateCalories(event) {
   var weightLossPerMonth = weightLossPerWeek * 4.35; // Приближенное количество недель в месяце
 
   document.getElementById("result").innerHTML =
-    "Ваша суточная норма калорий:<br> " + calories.toFixed(2);
+    "Your daily calorie intake:<br> " + calories.toFixed(2);
   document.getElementById(
     "result1"
-  ).innerHTML = `Для похудения в безопасном режиме уменьшите норму потребления до ${(
+  ).innerHTML = `To lose weight safely, reduce your intake to ${(
     calories - 500
-  ).toFixed(2)} ккал. Через неделю вы похудеете на ${weightLossPerWeek.toFixed(
+  ).toFixed(2)} calories. In a week, you will lose  ${weightLossPerWeek.toFixed(
     2
-  )} кг, а через месяц на ${weightLossPerMonth.toFixed(2)} кг.`;
+  )} kg, and in a month, you will lose ${weightLossPerMonth.toFixed(2)} kg.`;
 
   // // Дополнительные выводы результатов (по желанию)
   // document.getElementById("result2").innerHTML =
@@ -70,6 +70,14 @@ function calculateCalories(event) {
   //   "Еще один вариант вывода результатов, если нужно";
 }
 
+function bodyMassIndex(event) {
+  event.preventDefault();
+  var weight = parseFloat(document.getElementsByName("weight")[0].value);
+  var height = parseInt(document.getElementsByName("height")[0].value);
+  var BMI = weight / ((height / 100) * (height / 100));
+  document.getElementById("resultBMI").innerHTML =
+    "Your BMI is " + BMI.toFixed(2);
+}
 const modal = document.getElementsByClassName("modal")[0];
 const openModal = () => {
   modal.style.display = "block";
