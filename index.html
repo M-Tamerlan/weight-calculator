@@ -13,31 +13,25 @@
   <body>
     <section>
       <div class="infoContainer">
-        <h1>Welcome to the Calorie Calculator!</h1>
-        <p>
-          High-quality nutrition is the foundation of good health and
-          well-being. But how can you determine how many calories you need to
-          achieve your goals?
-        </p>
-        <p>
-          Our Calorie Calculator will help you calculate your daily calorie
-          needs and even provide recommendations on how many calories you should
-          consume to reach your desired weight. Whether you want to maintain
-          your current weight, lose weight, or gain weight, our tool can be your
-          reliable assistant in achieving your goals.
-        </p>
-        <p>
-          Simply fill in a few parameters, and you'll receive personalized
-          calorie consumption recommendations. Our calculator will also
-          calculate how many calories you should reduce for safe weight loss.
-          Eating healthily and maintaining a balanced diet will become easier
-          with our tool.
-        </p>
-        <p>
-          Start right now to take the first step in taking care of your health
-          and well-being. Proper nutrition is essential, and we're here to help
-          you in this process.
-        </p>
+        <div class="icon">
+          <img src="img\scales.svg" alt="" />
+          <h1>
+            Welcome to <br />
+            BodyMass Calculator!
+          </h1>
+        </div>
+        <div class="info">
+          <p>
+            Welcome to BodyMass Calculator - your reliable tool for weight
+            calculation. Whether you need to find your ideal weight, calculate
+            your Body Mass Index (BMI), determine calorie intake, or simply
+            discover the weight of different objects, we are here to assist you.
+            Our intuitive calculator provides accurate and fast results,
+            allowing you to easily monitor your weight and take care of your
+            health. Start using BodyMass Calculator today and keep track of your
+            weight effortlessly.
+          </p>
+        </div>
       </div>
       <form
         class="main-form"
@@ -180,8 +174,13 @@
               />
               <h1 class="done">DONE</h1>
             </div>
-            <p id="resultBMI"></p>
-            <p id="result"></p>
+            <div class="mainResult">
+              <p id="resultBMI"></p>
+              <p id="bestWeight"></p>
+              <p id="result"></p>
+            </div>
+
+            <h4 id="result-Bmi"></h4>
             <p id="result1"></p>
             <span onclick="closeModal();">&times</span>
           </div>
@@ -190,15 +189,12 @@
         <div class="result-btn-container">
           <button
             class="btn btn-success"
-            onclick="openModal();bodyMassIndex(); calculateCalories()"
+            onclick="openModal();bodyMassIndex(event);bestWeight(event);calculateCalories(event);"
           >
             <p>calculate</p>
           </button>
         </div>
       </form>
-      <!--  -->
-
-      <!--  -->
     </section>
     <script src="index.js"></script>
   </body>
