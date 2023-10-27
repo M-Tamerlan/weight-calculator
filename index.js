@@ -1,4 +1,15 @@
-
+// "use strict";
+// function calculateCalories(event) {
+//   event.preventDefault();
+//   var weight = parseFloat(document.getElementById("weight").value);
+//   var height = parseInt(document.getElementById("height").value);
+//   var age = parseInt(document.getElementById("age").value);
+//   var gender = document.querySelector(
+//     'input[name="genderButton"]:checked'
+//   ).value;
+//   var activityLevel = document.querySelector(
+//     'input[name="activeButton"]:checked'
+//   ).value;
 "use strict";
 function calculateCalories(event) {
   event.preventDefault();
